@@ -12,4 +12,4 @@ Create a separate HTML page for each of the below exercises.
 
 ### License
 
-(Mit License)[https://github.com/neu-mis-info6150-spring-2020/lab-1/blob/master/LICENSE]
+[Mit License](https://github.com/neu-mis-info6150-spring-2020/lab-1/blob/master/LICENSE)
