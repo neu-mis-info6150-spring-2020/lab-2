@@ -27,4 +27,4 @@ End of the class.
 
 ### License
 
-[Mit License](https://github.com/neu-mis-info6150-spring-2020/lab-1/blob/master/LICENSE)
+[MIT License](https://github.com/neu-mis-info6150-spring-2020/lab-1/blob/master/LICENSE)
