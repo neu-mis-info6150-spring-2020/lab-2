@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"b13aa61332",applicationID:"171360260"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1158.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://www.northeastern.edu/commutingservices/xmlrpc.php" />
+<title>logo21 &#8211; Northeastern University</title>
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Northeastern University &raquo; Feed" href="https://www.northeastern.edu/commutingservices/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Northeastern University &raquo; Comments Feed" href="https://www.northeastern.edu/commutingservices/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Northeastern University &raquo; logo21 Comments Feed" href="https://www.northeastern.edu/commutingservices/feed/?attachment_id=218" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.northeastern.edu\/commutingservices\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='tempera-fonts-css'  href='https://www.northeastern.edu/commutingservices/wp-content/themes/tempera/fonts/fontfaces.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tempera-style-css'  href='https://www.northeastern.edu/commutingservices/wp-content/themes/tempera/style.css' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.northeastern.edu/commutingservices/wp-includes/js/jquery/jquery.js'></script>
+<script type='text/javascript' src='https://www.northeastern.edu/commutingservices/wp-includes/js/jquery/jquery-migrate.min.js'></script>
+<link rel='https://api.w.org/' href='https://www.northeastern.edu/commutingservices/wp-json/' />
+<link rel='shortlink' href='https://www.northeastern.edu/commutingservices/?p=218' />
+<link rel="alternate" type="application/json+oembed" href="https://www.northeastern.edu/commutingservices/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.northeastern.edu%2Fcommutingservices%2Flogo21%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.northeastern.edu/commutingservices/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.northeastern.edu%2Fcommutingservices%2Flogo21%2F&#038;format=xml" />
+<link rel="author" href="http://www.mandilewebdesign.com"><style type="text/css"> #header, #main, #topbar-inner { max-width: 1180px; } #container.one-column { } #container.two-columns-right #secondary { width:280px; float:right; } #container.two-columns-right #content { width:calc(100% - 320px); float:left; } #container.two-columns-left #primary { width:280px; float:left; } #container.two-columns-left #content { width:calc(100% - 320px); float:right; } #container.three-columns-right .sidey { width:140px; float:left; } #container.three-columns-right #primary { margin-left:20px; margin-right:20px; } #container.three-columns-right #content { width: calc(100% - 320px); float:left;} #container.three-columns-left .sidey { width:140px; float:left; } #container.three-columns-left #secondary {margin-left:20px; margin-right:20px; } #container.three-columns-left #content { width: calc(100% - 320px); float:right; } #container.three-columns-sided .sidey { width:140px; float:left; } #container.three-columns-sided #secondary { float:right; } #container.three-columns-sided #content { width: calc(100% - 360px); float:right; margin: 0 180px 0 -1180px; } body { font-family: Ubuntu; } #content h1.entry-title a, #content h2.entry-title a, #content h1.entry-title , #content h2.entry-title { font-family: "Yanone Kaffeesatz Regular"; } .widget-title, .widget-title a { font-family: "Open Sans Light"; } .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6, #comments #reply-title, .nivo-caption h2, #front-text1 h2, #front-text2 h2, .column-header-image, .column-header-noimage { font-family: "Open Sans Light"; } #site-title span a { font-family: "Yanone Kaffeesatz Regular"; } #access ul li a, #access ul li a span { font-family: "Droid Sans"; } body { color: #444444; background-color: #f5f5f5 } a { color: #9a9a9a; } a:hover,.entry-meta span a:hover, .comments-link a:hover { color: #333; } #header { background-color: ; } #site-title span a { color:#cc0000; } #site-description { color:#444; background-color: rgba(245,245,245,0.3); padding-left: 6px; } .socials a { background-color: #cc0000; } .socials .socials-hover { background-color: #D6341D; } /* Main menu top level */ #access a, #nav-toggle span, li.menu-main-search .searchform input[type="search"] { color: #ffffff; } li.menu-main-search .searchform input[type="search"] { background-color: #4d4d4d; border-left-color: #171717; } #access, #nav-toggle {background-color: #353535; } #access > .menu > ul > li > a > span { border-color: #171717; -webkit-box-shadow: 1px 0 0 #4d4d4d; box-shadow: 1px 0 0 #4d4d4d; } /*.rtl #access > .menu > ul > li > a > span { -webkit-box-shadow: -1px 0 0 #4d4d4d; box-shadow: -1px 0 0 #4d4d4d; } */ #access a:hover {background-color: #424242; } #access ul li.current_page_item > a, #access ul li.current-menu-item > a, #access ul li.current_page_ancestor > a, #access ul li.current-menu-ancestor > a { background-color: #424242; } /* Main menu Submenus */ #access > .menu > ul > li > ul:before {border-bottom-color:#9a9a9a;} #access ul ul ul li:first-child:before { border-right-color:#9a9a9a;} #access ul ul li { background-color:#9a9a9a; border-top-color:#a8a8a8; border-bottom-color:#8f8f8f} #access ul ul li a{color:#ffffff} #access ul ul li a:hover{background:#a8a8a8} #access ul ul li.current_page_item > a, #access ul ul li.current-menu-item > a, #access ul ul li.current_page_ancestor > a, #access ul ul li.current-menu-ancestor > a { background-color:#a8a8a8; } #topbar { background-color: #353535;border-bottom-color:#5d5d5d; box-shadow:3px 0 3px #0d0d0d; } .topmenu ul li a, .topmenu .searchsubmit { color: #CCCCCC; } .topmenu ul li a:hover, .topmenu .searchform input[type="search"] { color: #EEEEEE; border-bottom-color: rgba( 204,0,0, 0.5); } #main { background-color: #FFFFFF; } #author-info, #entry-author-info, #content .page-title { border-color: #cc0000; background: #F7F7F7; } #entry-author-info #author-avatar, #author-info #author-avatar { border-color: #EEEEEE; } .sidey .widget-container { color: #333333; background-color: ; } .sidey .widget-title { color: #EEEEEE; background-color: #444444;border-color:#1c1c1c;} .sidey .widget-container a {color:;} .sidey .widget-container a:hover {color:;} .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 { color: #cc0000; } .sticky .entry-header {border-color:#cc0000 } .entry-title, .entry-title a { color: #cc0000; } .entry-title a:hover { color: #000000; } #content span.entry-format { color: #ffffff; background-color: #353535; } #footer { color: #AAAAAA; background-color: ; } #footer2 { color: #AAAAAA; background-color: #f5f5f5; } #footer a { color: ; } #footer a:hover { color: ; } #footer2 a, .footermenu ul li:after { color: ; } #footer2 a:hover { color: ; } #footer .widget-container { color: #333333; background-color: ; } #footer .widget-title { color: #EEEEEE; background-color: #444444;border-color:#1c1c1c } a.continue-reading-link, #cryout_ajax_more_trigger { color:#ffffff; background:#353535; border-bottom-color:#cc0000; } a.continue-reading-link:hover { border-bottom-color:#c00; } a.continue-reading-link i.crycon-right-dir {color:#cc0000} a.continue-reading-link:hover i.crycon-right-dir {color:#c00} .page-link a, .page-link > span > em {border-color:#CCCCCC} .columnmore a {background:#cc0000;color:#F7F7F7} .columnmore a:hover {background:#c00;} .button, #respond .form-submit input#submit, input[type="submit"], input[type="reset"] { background-color: #cc0000; } .button:hover, #respond .form-submit input#submit:hover { background-color: #c00; } .entry-content tr th, .entry-content thead th { color: #cc0000; } .entry-content fieldset, #content tr td,#content tr th, #content thead th { border-color: #CCCCCC; } #content tr.even td { background-color: #F7F7F7 !important; } hr { background-color: #CCCCCC; } input[type="text"], input[type="password"], input[type="email"], textarea, select, input[type="color"],input[type="date"],input[type="datetime"],input[type="datetime-local"],input[type="month"],input[type="number"],input[type="range"], input[type="search"],input[type="tel"],input[type="time"],input[type="url"],input[type="week"] { background-color: #F7F7F7; border-color: #CCCCCC #EEEEEE #EEEEEE #CCCCCC; color: #444444; } input[type="submit"], input[type="reset"] { color: #FFFFFF; background-color: #cc0000; } input[type="text"]:hover, input[type="password"]:hover, input[type="email"]:hover, textarea:hover, input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="range"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover { background-color: rgba(247,247,247,0.4); } .entry-content pre { border-color: #CCCCCC; border-bottom-color:#cc0000;} .entry-content code { background-color:#F7F7F7;} .entry-content blockquote { border-color: #EEEEEE; } abbr, acronym { border-color: #444444; } .comment-meta a { color: #444444; } #respond .form-allowed-tags { color: #999999; } .entry-meta .crycon-metas:before {color:#CCCCCC;} .entry-meta span a, .comments-link a, .entry-meta {color:#999999;} .entry-meta span a:hover, .comments-link a:hover {color:#666666;} .nav-next a:hover {} .nav-previous a:hover { } .pagination { border-color:#ededed;} .pagination span, .pagination a { background:#F7F7F7; border-left-color:#dddddd; border-right-color:#ffffff; } .pagination a:hover { background: #ffffff; } #searchform input[type="text"] {color:#999999;} .caption-accented .wp-caption { background-color:rgba(204,0,0,0.8); color:#FFFFFF} .tempera-image-one .entry-content img[class*='align'],.tempera-image-one .entry-summary img[class*='align'], .tempera-image-two .entry-content img[class*='align'],.tempera-image-two .entry-summary img[class*='align'] { border-color:#cc0000;} html { font-size:15px; line-height:1.7; } #content p, #content ul, #content ol, #content, #frontpage blockquote { text-align:Default; } #content p, #content ul, #content ol, #content dl, .widget-area, .widget-area a, table, table td { word-spacing:Default; letter-spacing:; } #content h1.entry-title, #content h2.entry-title { font-size:34px ;} .widget-title, .widget-title a { font-size:18px ;} h1 { font-size: 2.526em;} h2 { font-size: 2.202em;} h3 { font-size: 1.878em;} h4 { font-size: 1.554em;} h5 { font-size: 1.23em;} h6 { font-size: 0.906em;} #site-title { font-size:38px ;} #access ul li a, li.menu-main-search .searchform input[type="search"] { font-size:14px ;} #respond .form-allowed-tags { display:none;} .nocomments, .nocomments2 {display:none;} .comments-link span { display:none;} #header-container > div { margin:40px 0 0 0px;} #content p, #content ul, #content ol, #content dd, #content pre, #content hr { margin-bottom: 1.0em; } #toTop {background:#FFFFFF;margin-left:1330px;} #toTop:hover .crycon-back2top:before {color:#c00;} #main {margin-top:15px; } #forbottom {margin-left: 40px; margin-right: 40px;} #header-widget-area { width: 33%; } #branding { height:140px; } </style> 
+<style type="text/css">/* Tempera Custom CSS */ 
+#footer2 span {
+display: none !important;
+}
+.theme-default .nivo-controlNav, .theme-default .nivo-directionNav a {
+display: none;
+}
+.theme-default .nivoSlider a {
+cursor: default;
+} 
+#front-text1 h2 {
+color: #cc0000;
+} 
+.clickable-column h3 {
+text-align: center;
+color: #cc0000;
+}</style>
+<link rel='stylesheet' id='tempera-style-mobile'  href='https://www.northeastern.edu/commutingservices/wp-content/themes/tempera/styles/style-mobile.css?ver=1.7.0' type='text/css' media='all' />	<!--[if lt IE 9]>
+	<script>
+	document.createElement('header');
+	document.createElement('nav');
+	document.createElement('section');
+	document.createElement('article');
+	document.createElement('aside');
+	document.createElement('footer');
+	</script>
+	<![endif]-->
+	</head>
+<body class="attachment attachment-template-default single single-attachment postid-218 attachmentid-218 attachment-png tempera-image-one caption-dark tempera-menu-left">
+
+
+<div id="wrapper" class="hfeed">
+<div id="topbar" ><div id="topbar-inner">  </div></div>
+
+<div id="header-full">
+	<header id="header">
+		<div id="masthead">
+			<div id="branding" role="banner" >
+					<div id="header-container">
+	<div><a id="logo" href="https://www.northeastern.edu/commutingservices/" ><img title="Northeastern University" alt="Northeastern University" src="https://www.northeastern.edu/commutingservices/wp-content/uploads/2017/11/cropped-logo21.png" /></a></div></div>								<div style="clear:both;"></div>
+			</div><!-- #branding -->
+			<a id="nav-toggle"><span>&nbsp;</span></a>
+			<nav id="access" role="navigation">
+					<div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">
+		Skip to content	</a></div>
+	<div class="menu"><ul id="prime_nav" class="menu"><li id="menu-item-473" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-473"><a href="#"><span>Car Share</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-458" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-458"><a href="https://www.northeastern.edu/commutingservices/car-share/zip-car/"><span>Zip Car</span></a></li>
+</ul>
+</li>
+<li id="menu-item-467" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-467"><a href="#"><span>Public Transit</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-163" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-163"><a href="https://www.northeastern.edu/commutingservices/mbta/"><span>MBTA</span></a></li>
+	<li id="menu-item-466" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-466"><a href="https://www.northeastern.edu/commutingservices/mbta/student-discounted-semester-pass-program/"><span>Student Discounted Semester Pass Program</span></a></li>
+	<li id="menu-item-465" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-465"><a href="https://www.northeastern.edu/commutingservices/mbta/employee-transit-benefits/"><span>Employee Transit Benefits</span></a></li>
+</ul>
+</li>
+<li id="menu-item-472" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-472"><a href="#"><span>RideShare</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-471" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-471"><a href="https://www.northeastern.edu/commutingservices/rideshare/mass-rides-car-pool-matching-and-emergency-ride-home-programs/"><span>Mass Rides, Car Pool Matching and Emergency Ride Home programs</span></a></li>
+</ul>
+</li>
+<li id="menu-item-483" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-483"><a href="#"><span>Bicycling</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-482" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-482"><a href="https://www.northeastern.edu/commutingservices/bicycling/discounted-blue-bike-sharing-program/"><span>Blue Bikes bike sharing program</span></a></li>
+	<li id="menu-item-481" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-481"><a href="https://www.northeastern.edu/commutingservices/bicycling/bike-repair-stations/"><span>Bike Repair Stations</span></a></li>
+	<li id="menu-item-499" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-499"><a href="https://www.northeastern.edu/commutingservices/bicycling/gated-bike-storage/"><span>Gated Bike Storage</span></a></li>
+	<li id="menu-item-480" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-480"><a href="https://www.northeastern.edu/commutingservices/bicycling/additional-resources/"><span>Additional Resources</span></a></li>
+</ul>
+</li>
+<li id="menu-item-443" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-443"><a href="https://www.northeastern.edu/commutingservices/campus-map-directions/"><span>Campus Map</span></a></li>
+<li id="menu-item-446" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-446"><a href="https://www.northeastern.edu/commutingservices/walking/"><span>Walking</span></a></li>
+<li id="menu-item-449" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-449"><a href="https://www.northeastern.edu/commutingservices/emergency-assistance/"><span>Emergency Assistance</span></a></li>
+<li id="menu-item-146" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146"><a href="https://www.northeastern.edu/commutingservices/boston-campus-parking/"><span>Boston Campus Parking</span></a></li>
+<li id="menu-item-526" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-526"><a href="https://www.northeastern.edu/commutingservices/boston-campus-parking/electric-vehicle-charging-stations/"><span>Electric Vehicle Charging Stations</span></a></li>
+<li id="menu-item-150" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-150"><a href="https://www.northeastern.edu/commutingservices/boston-campus-parking/safety-assistance/"><span>Safety &#038; Assistance</span></a></li>
+<li id="menu-item-148" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-148"><a href="https://www.northeastern.edu/commutingservices/boston-campus-parking/contact-us/"><span>Contact Us</span></a></li>
+<li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="https://www.northeastern.edu/commutingservices/boston-campus-parking/non-resident-sticker/"><span>Non-Resident Sticker</span></a></li>
+<li class='menu-main-search'> 
+<form role="search" method="get" class="searchform" action="https://www.northeastern.edu/commutingservices/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="s" placeholder="Search" value="" name="s" />
+	</label>
+	<button type="submit" class="searchsubmit"><span class="screen-reader-text">Search</span><i class="crycon-search"></i></button>
+</form>
+ </li></ul></div>			</nav><!-- #access -->
+		</div><!-- #masthead -->
+	</header><!-- #header -->
+</div><!-- #header-full -->
+
+<div style="clear:both;height:0;"> </div>
+
+<div id="main" class="main">
+		<div id="toTop"><i class="crycon-back2top"></i> </div>	<div  id="forbottom" >
+		
+		<div style="clear:both;"> </div>
+
+		
+		<section id="container" class="single-attachment one-column">
+			<div id="content" role="main">
+
+
+				
+				<div id="post-218" class="post post-218 attachment type-attachment status-inherit hentry">
+					<h2 class="entry-title">logo21</h2>
+
+					<div class="entry-meta">
+						<span class="attach-size">Full size is <a href="https://www.northeastern.edu/commutingservices/wp-content/uploads/2015/06/logo21.png" title="Link to full-size image">300 &times; 100</a> pixels</span>					</div><!-- .entry-meta -->
+
+					<div class="entry-content">
+						<div class="entry-attachment">
+						<p class="attachment"><a href="https://www.northeastern.edu/commutingservices/cropped-logo21-png/" title="logo21" rel="attachment"><img width="300" height="100" src="https://www.northeastern.edu/commutingservices/wp-content/uploads/2015/06/logo21.png" class="attachment-900x9999 size-900x9999" alt="" /></a></p>
+
+					<div class="entry-utility">
+																	</div><!-- .entry-utility -->
+
+				</div><!-- #post-## -->
+
+						</div><!-- .entry-attachment -->
+						<div class="entry-caption"></div>
+
+
+					</div><!-- .entry-content -->
+
+						<div id="nav-below" class="navigation">
+							<div class="nav-previous"><a href='https://www.northeastern.edu/commutingservices/favicon/'><i class="meta-nav-prev"></i>Previous image</a></div>
+							<div class="nav-next"><a href='https://www.northeastern.edu/commutingservices/cropped-logo21-png/'>Next image<i class="meta-nav-next"></i></a></div>
+						</div><!-- #nav-below -->
+
+
+ <div id="comments" class=""> 	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/commutingservices/logo21/#respond" style="display:none;">Cancel reply</a></small></h3><p class="must-log-in">You must be <a href="https://www.northeastern.edu/commutingservices/wp-login.php?redirect_to=https%3A%2F%2Fwww.northeastern.edu%2Fcommutingservices%2Flogo21%2F">logged in</a> to post a comment.</p>	</div><!-- #respond -->
+	</div><!-- #comments -->
+
+
+
+
+			</div><!-- #content -->
+		</section><!-- #container -->
+
+	<div style="clear:both;"></div>
+	</div> <!-- #forbottom -->
+
+
+	<footer id="footer" role="contentinfo">
+		<div id="colophon">
+		
+			
+			
+		</div><!-- #colophon -->
+
+		<div id="footer2">
+		
+			<div id="site-copyright">360 Huntington Ave, Boston, Massachusetts 02115 - 02115 - (617)-373-2000 - TTY (617)-373-3768<br />&copy; 2017 Northeastern University</div><nav class="footermenu"><ul id="menu-footer-menu" class="menu"><li id="menu-item-41" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41"><a href="http://myneu.neu.edu/cp/home/displaylogin">MyNEU</a></li>
+<li id="menu-item-42" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42"><a href="https://prod-web.neu.edu/wasapp/employeelookup/public/main.action">Find Faculty &#038; Staff</a></li>
+<li id="menu-item-43" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43"><a href="http://www.northeastern.edu/neuhome/adminlinks/findaz.html">Find A-Z</a></li>
+<li id="menu-item-44" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-44"><a href="http://www.northeastern.edu/emergency/index.html">Emergency Information</a></li>
+<li id="menu-item-45" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-45"><a href="http://www.northeastern.edu/search/index.html">Search</a></li>
+<li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46"><a href="http://assistive.usablenet.com/tt/http://www.northeastern.edu/index.html">Text Only</a></li>
+</ul></nav>	<span style="display:block;float:right;text-align:right;padding:0 20px 5px;font-size:.9em;">
+	Powered by <a target="_blank" href="http://www.cryoutcreations.eu" title="Tempera Theme by Cryout Creations">Tempera</a> &amp; <a target="_blank" href="http://wordpress.org/"
+			title="Semantic Personal Publishing Platform">  WordPress.		</a>
+	</span><!-- #site-info -->
+				
+		</div><!-- #footer2 -->
+
+	</footer><!-- #footer -->
+
+	</div><!-- #main -->
+</div><!-- #wrapper -->
+
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+var tempera_settings = {"mobile":"1","fitvids":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.northeastern.edu/commutingservices/wp-content/themes/tempera/js/frontend.js'></script>
+<script type='text/javascript' src='https://www.northeastern.edu/commutingservices/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='https://www.northeastern.edu/commutingservices/wp-includes/js/wp-embed.min.js'></script>
+	<script type="text/javascript">
+	var cryout_global_content_width = 900;
+	var cryout_toTop_offset = 1180;
+			</script> 
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b13aa61332","applicationID":"171360260","transactionName":"ZFBbYxAAXxUAU0QPVl0aeFQWCF4ITlFEElhQXVRSDBU=","queueTime":0,"applicationTime":511,"atts":"SBdYFVgaTBs=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
