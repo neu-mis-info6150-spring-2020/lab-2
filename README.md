@@ -9,6 +9,17 @@ Create a separate HTML page for each of the below exercises.
 3. Create a simple HTML table.
 4. Create a simple SVG object in a HTML page.
 
+### Setup
+
+```
+// Use http-server for serving the page.
+npm i -g http-server
+
+// Launch the pages over HTTP
+cd <path-to-lab-1-repo-dircetory>
+http-server -p 3000 -d --cors .
+```
+
 ### Due Date
 
 End of the class.
