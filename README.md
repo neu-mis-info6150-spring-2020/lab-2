@@ -9,6 +9,10 @@ Create a separate HTML page for each of the below exercises.
 3. Create a simple HTML table.
 4. Create a simple SVG object in a HTML page.
 
+### Due Date
+
+End of the class.
+
 
 ### License
 
