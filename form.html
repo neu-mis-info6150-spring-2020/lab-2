@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML Form</title>
+    </head>
+    <body>
+        <h1>HTML Form Example</h1>
+        <form action="./typography.html" method="GET">
+            <fieldset>
+                <legend>Name</legend>
+                <input type="text" name="name">
+            </fieldset>
+            <div>
+                <label>Date of birth:</label>
+                <input type="date" name="dob">
+            </div>
+            <div>
+                <label>Gender:</label>
+                <input type="radio" name="gender" value="Male">
+                <input type="radio" name="gender" value="Female">
+            </div>
+            <div>
+                <select>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                </select>
+            </div>
+            <div>
+                <button formaction="POST" formmethod="GET" type="submit">Submit</button>
+            </div>
+        </form>
+    </body>
+</html>
